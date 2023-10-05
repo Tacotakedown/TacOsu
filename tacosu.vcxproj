@@ -24,6 +24,7 @@
     <ProjectGuid>{0b063650-2e13-49f0-9eae-5fca82f87025}</ProjectGuid>
     <RootNamespace>tacosu</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>tacosu</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -105,6 +106,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -120,6 +122,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,17 +132,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Util\Rect\Rect.h" />
+    <ClInclude Include="src\Util\JSON\JSONValue.h" />
+    <ClInclude Include="src\Util\JSON\JSON.h" />
+    <ClInclude Include="src\Util\Matrices\Matrices.h" />
     <ClInclude Include="src\Engine\input\KeyboardEvent.h" />
-    <ClInclude Include="src\Util\AES.h" />
+    <ClInclude Include="src\Util\AES\AES.h" />
     <ClInclude Include="src\Util\cbase.h" />
     <ClInclude Include="src\Util\FastDelegate.h" />
-    <ClInclude Include="src\Util\Vectors.h" />
-    <ClInclude Include="src\Util\UString.h" />
+    <ClInclude Include="src\Util\Vectors\Vectors.h" />
+    <ClInclude Include="src\Util\UString\UString.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Util\Rect\Rect.cpp" />
+    <ClCompile Include="src\Util\JSON\JSONValue.cpp" />
+    <ClCompile Include="src\Util\JSON\JSON.cpp" />
+    <ClCompile Include="src\Util\Matrices\Matrices.cpp" />
     <ClCompile Include="src\Engine\input\KeyboardEvent.cpp" />
-    <ClCompile Include="src\Util\AES.cpp" />
-    <ClCompile Include="src\Util\UString.cpp" />
+    <ClCompile Include="src\Util\AES\AES.cpp" />
+    <ClCompile Include="src\Util\UString\UString.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
