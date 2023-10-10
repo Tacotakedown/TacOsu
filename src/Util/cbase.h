@@ -13,7 +13,17 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include <fstream>
+#include <iostream>
+
+#include <cstdarg>
+#include <cwctype>
+
 #include "Vectors/Vectors.h"
+#include "Matrices/Matrices.h"
+#include "UString/Ustring.h"
+#include "Rect/Rect.h"
+
 
 
 #ifndef NULL

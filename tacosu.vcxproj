@@ -132,6 +132,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Util\miniz\miniz.h" />
+    <ClInclude Include="src\Util\lodepng\lodepng.h" />
+    <ClInclude Include="src\Util\Quaternion\Quaternion.h" />
+    <ClInclude Include="src\Util\MD5\MD5.h" />
+    <ClInclude Include="src\Util\LzmaDec\LzmaDec.h" />
     <ClInclude Include="src\Util\Rect\Rect.h" />
     <ClInclude Include="src\Util\JSON\JSONValue.h" />
     <ClInclude Include="src\Util\JSON\JSON.h" />
@@ -139,11 +144,16 @@
     <ClInclude Include="src\Engine\input\KeyboardEvent.h" />
     <ClInclude Include="src\Util\AES\AES.h" />
     <ClInclude Include="src\Util\cbase.h" />
-    <ClInclude Include="src\Util\FastDelegate.h" />
+    <ClInclude Include="src\Util\FastDelegate\FastDelegate.h" />
     <ClInclude Include="src\Util\Vectors\Vectors.h" />
     <ClInclude Include="src\Util\UString\UString.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Util\miniz\miniz.c" />
+    <ClCompile Include="src\Util\lodepng\lodepng.cpp" />
+    <ClCompile Include="src\Util\Quaternion\Quaternion.cpp" />
+    <ClCompile Include="src\Util\MD5\MD5.cpp" />
+    <ClCompile Include="src\Util\LzmaDec\LzmaDec.c" />
     <ClCompile Include="src\Util\Rect\Rect.cpp" />
     <ClCompile Include="src\Util\JSON\JSONValue.cpp" />
     <ClCompile Include="src\Util\JSON\JSON.cpp" />
