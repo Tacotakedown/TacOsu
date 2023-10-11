@@ -19,6 +19,14 @@
 #include <cstdarg>
 #include <cwctype>
 
+
+
+#include "FastDelegate/FastDelegate.h"
+
+#include "Graphics/Graphics.h"
+#include "Environment/Environment.h"
+#include "input/KeyboardEvent/KeyboardEvent.h"
+
 #include "Vectors/Vectors.h"
 #include "Matrices/Matrices.h"
 #include "UString/Ustring.h"

@@ -182,6 +182,22 @@ int UString::findChar(wchar_t ch, int start, bool respectEscapeChars) const
 	return -1;
 }
 
+int UString::findChar(const UString& str, int start, bool respectEscapeChars) const {
+	bool escaped = false;
+	for (int i = start; i < m_length; i++) {
+		if (respectEscapeChars && !escaped && m_unicode[i] == USTRING_ESCAPE_CHAR) {
+			escaped = true;
+		}
+		else {
+			if (!escaped && str.findChar(m_unicode[i]) >= 0) {
+				return i;
+			}
+			escaped = false;
+		}
+	}
+	return -1;
+}
+
 int UString::find(const UString& str, int start) const {
 	const int lastPossibleMatch = m_length - str.m_length;
 	for (int i = start; i < lastPossibleMatch; i++) {

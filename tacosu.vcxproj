@@ -106,11 +106,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.250.1\Include;$(SolutionDir)tacosu\src\Engine;$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.250.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -122,16 +124,29 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.250.1\Include;$(SolutionDir)tacosu\src\Engine;$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.250.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Engine\Camera\Camera.h" />
+    <ClInclude Include="src\Engine\Environment\Environment.h" />
+    <ClInclude Include="src\Engine\Graphics\Graphics.h" />
+    <ClInclude Include="src\Engine\Engine.h" />
+    <ClInclude Include="src\Engine\ConVar\ConVar.h" />
+    <ClInclude Include="src\Engine\input\Keyboard\Keyboard.h" />
+    <ClInclude Include="src\Engine\input\Mouse\Mouse.h" />
+    <ClInclude Include="src\Engine\input\Cursors\Cursors.h" />
+    <ClInclude Include="src\Engine\input\Mouse\MouseListener.h" />
+    <ClInclude Include="src\Engine\Thread\Thread.h" />
+    <ClInclude Include="src\Engine\Timer\Timer.h" />
     <ClInclude Include="src\Util\miniz\miniz.h" />
     <ClInclude Include="src\Util\lodepng\lodepng.h" />
     <ClInclude Include="src\Util\Quaternion\Quaternion.h" />
@@ -141,14 +156,22 @@
     <ClInclude Include="src\Util\JSON\JSONValue.h" />
     <ClInclude Include="src\Util\JSON\JSON.h" />
     <ClInclude Include="src\Util\Matrices\Matrices.h" />
-    <ClInclude Include="src\Engine\input\KeyboardEvent.h" />
+    <ClInclude Include="src\Engine\input\KeyboardEvent\KeyboardEvent.h" />
     <ClInclude Include="src\Util\AES\AES.h" />
     <ClInclude Include="src\Util\cbase.h" />
     <ClInclude Include="src\Util\FastDelegate\FastDelegate.h" />
     <ClInclude Include="src\Util\Vectors\Vectors.h" />
     <ClInclude Include="src\Util\UString\UString.h" />
+    <ClInclude Include="src\Engine\VulkanInterface\VulkanInterface.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Engine\Camera\Camera.cpp" />
+    <ClCompile Include="src\Engine\Environment\Environment.cpp" />
+    <ClCompile Include="src\Engine\Graphics\Graphics.cpp" />
+    <ClCompile Include="src\Engine\Engine.cpp" />
+    <ClCompile Include="src\Engine\ConVar\ConVar.cpp" />
+    <ClCompile Include="src\Engine\input\Keyboard\Keyboard.cpp" />
+    <ClCompile Include="src\Engine\input\Mouse\Mouse.cpp" />
     <ClCompile Include="src\Util\miniz\miniz.c" />
     <ClCompile Include="src\Util\lodepng\lodepng.cpp" />
     <ClCompile Include="src\Util\Quaternion\Quaternion.cpp" />
@@ -158,9 +181,10 @@
     <ClCompile Include="src\Util\JSON\JSONValue.cpp" />
     <ClCompile Include="src\Util\JSON\JSON.cpp" />
     <ClCompile Include="src\Util\Matrices\Matrices.cpp" />
-    <ClCompile Include="src\Engine\input\KeyboardEvent.cpp" />
+    <ClCompile Include="src\Engine\input\KeyboardEvent\KeyboardEvent.cpp" />
     <ClCompile Include="src\Util\AES\AES.cpp" />
     <ClCompile Include="src\Util\UString\UString.cpp" />
+    <ClCompile Include="src\Engine\VulkanInterface\VulkanInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
