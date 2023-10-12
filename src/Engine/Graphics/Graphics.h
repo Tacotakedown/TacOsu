@@ -177,7 +177,7 @@ protected:
 	virtual void init() = 0;
 	virtual void onTransformUpdate(Matrix4& projectionMatrix, Matrix4& worldMatrix) = 0;
 
-	void updateTransfor(bool force = false);
+	void updateTransform(bool force = false);
 
 	void checkStackLeaks();
 

@@ -1,0 +1,17 @@
+﻿  MD5.cpp
+C:\Users\robog\OneDrive\Documents\github\tacosu\tacosu\src\Util\cbase.h(114,18): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\robog\OneDrive\Documents\github\tacosu\tacosu\src\Util\cbase.h(119,22): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\robog\OneDrive\Documents\github\tacosu\tacosu\src\Util\MD5\MD5.cpp(343,9): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  JSON.cpp
+C:\Users\robog\OneDrive\Documents\github\tacosu\tacosu\src\Util\JSON\JSON.cpp(64,6): error C4996: 'mbstowcs': This function or variable may be unsafe. Consider using mbstowcs_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\robog\OneDrive\Documents\github\tacosu\tacosu\src\Util\JSON\JSON.cpp(220,7): error C4996: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>::reserve': warning STL4024: std::string::reserve() without an argument is deprecated in C++20. To shrink the string's capacity, use std::string::shrink_to_fit() instead. Otherwise, provide an argument to std::string::reserve(). You can define _SILENCE_CXX20_STRING_RESERVE_WITHOUT_ARGUMENT_DEPRECATION_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning.
+  Matrices.cpp
+  UString.cpp
+C:\Users\robog\OneDrive\Documents\github\tacosu\tacosu\src\Util\cbase.h(114,18): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\robog\OneDrive\Documents\github\tacosu\tacosu\src\Util\cbase.h(119,22): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\robog\OneDrive\Documents\github\tacosu\tacosu\src\Util\UString\UString.cpp(609,41): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\robog\OneDrive\Documents\github\tacosu\tacosu\src\Util\UString\UString.cpp(609,31): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+  VulkanInterface.cpp
+C:\Users\robog\OneDrive\Documents\github\tacosu\tacosu\src\Util\cbase.h(114,18): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\robog\OneDrive\Documents\github\tacosu\tacosu\src\Util\cbase.h(119,22): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Generating Code...

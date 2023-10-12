@@ -487,7 +487,7 @@ void UString::lowerCase() {
 			m_unicode[i] = std::tolower(m_unicode[i]);
 			m_utf8[i] = std::tolower(m_utf8[i]);
 		}
-		if (!isAsciiOnly) {
+		if (!isAsciiOnly()) {
 			updateUtf8();
 		}
 	}
@@ -499,7 +499,7 @@ void UString::upperCase() {
 			m_unicode[i] = std::toupper(m_unicode[i]);
 			m_utf8[i] = std::toupper(m_utf8[i]);
 		}
-		if (!isAsciiOnly) {
+		if (!isAsciiOnly()) {
 			updateUtf8();
 		}
 	}

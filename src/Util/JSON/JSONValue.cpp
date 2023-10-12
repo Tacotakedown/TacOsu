@@ -29,13 +29,14 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <wchar.h>
 #include <math.h>
 
 #include "JSONValue.h"
 
-#ifdef __MINGW32__
-#define wcsncasecmp wcsnicmp
-#endif
+
+#define wcsncasecmp _wcsnicmp
+
 
  // Macros to free an array/object
 #define FREE_ARRAY(x) { JSONArray::iterator iter; for (iter = x.begin(); iter != x.end(); iter++) { delete *iter; } }

@@ -7,7 +7,7 @@ static std::vector<ConVar*>& _getGlobalConVarArray() {
 }
 
 static std::unordered_map<std::string, ConVar*>& _getGlobalConVarMap() {
-	static std::unordered_map<std::string, ConVar*>& g_vConVarMap;
+	static std::unordered_map<std::string, ConVar*> g_vConVarMap;
 	return g_vConVarMap;
 }
 
@@ -16,7 +16,7 @@ static void _addConVar(ConVar* c) {
 		_getGlobalConVarArray().reserve(1024);
 	}
 	_getGlobalConVarArray().push_back(c);
-	_getGlobalConVarArray()[std::string(c->getName().toUtf8(), c->getName().lengthUtf8())] = c;
+	_getGlobalConVarMap()[std::string(c->getName().toUtf8(), c->getName().lengthUtf8())] = c;
 }
 
 static ConVar* _getConVar(const UString& name) {
