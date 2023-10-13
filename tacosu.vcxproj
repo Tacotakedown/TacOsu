@@ -106,13 +106,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.250.1\Include;$(SolutionDir)tacosu\dependencies\FreeType\include;$(SolutionDir)tacosu\src\Engine;$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\OpenCL\include;C:\VulkanSDK\1.3.250.1\Include;$(SolutionDir)tacosu\dependencies\FreeType\include;$(SolutionDir)tacosu\src\Engine;$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.250.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\OpenCL\lib;C:\VulkanSDK\1.3.250.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -124,18 +124,28 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.250.1\Include;$(SolutionDir)tacosu\dependencies\FreeType\include;$(SolutionDir)tacosu\src\Engine;$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\OpenCL\include;C:\VulkanSDK\1.3.250.1\Include;$(SolutionDir)tacosu\dependencies\FreeType\include;$(SolutionDir)tacosu\src\Engine;$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.250.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\OpenCL\lib;C:\VulkanSDK\1.3.250.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Engine\Profiler\Profiler.h" />
+    <ClInclude Include="src\Engine\AnimationHandler\AnimationHandler.h" />
+    <ClInclude Include="src\Engine\OpenCLInterface\OpenCLInterface.h" />
+    <ClInclude Include="src\Engine\ContextMenu\ContextMenu.h" />
+    <ClInclude Include="src\Engine\RenderTarget\RenderTarget.h" />
+    <ClInclude Include="src\Engine\Shader\Shader.h" />
+    <ClInclude Include="src\Engine\Sound\Sound.h" />
+    <ClInclude Include="src\Engine\SoundEngine\SoundEngine.h" />
+    <ClInclude Include="src\Engine\Image\Image.h" />
+    <ClInclude Include="src\Engine\ResourceManager\ResourceManager.h" />
     <ClInclude Include="src\Engine\Resource\Resource.h" />
     <ClInclude Include="src\Engine\Font\Font.h" />
     <ClInclude Include="src\Engine\Camera\Camera.h" />
@@ -166,8 +176,21 @@
     <ClInclude Include="src\Util\Vectors\Vectors.h" />
     <ClInclude Include="src\Util\UString\UString.h" />
     <ClInclude Include="src\Engine\VulkanInterface\VulkanInterface.h" />
+    <ClInclude Include="src\Engine\VertexArrayObject\VertexArrayObject.h" />
+    <ClInclude Include="src\Engine\TextureAtlas\TextureAtlas.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Engine\Profiler\Profiler.cpp" />
+    <ClCompile Include="src\Engine\AnimationHandler\AnimationHandler.cpp" />
+    <ClCompile Include="src\Engine\OpenCLInterface\OpenCLInterface.cpp" />
+    <ClCompile Include="src\Engine\ContextMenu\ContextMenu.cpp" />
+    <ClCompile Include="src\Engine\RenderTarget\RenderTarget.cpp" />
+    <ClCompile Include="src\Engine\Shader\Shader.cpp" />
+    <ClCompile Include="src\Engine\Main\Main.cpp" />
+    <ClCompile Include="src\Engine\Sound\Sound.cpp" />
+    <ClCompile Include="src\Engine\SoundEngine\SoundEngine.cpp" />
+    <ClCompile Include="src\Engine\Image\Image.cpp" />
+    <ClCompile Include="src\Engine\ResourceManager\ResourceManager.cpp" />
     <ClCompile Include="src\Engine\Resource\Resource.cpp" />
     <ClCompile Include="src\Engine\Font\Font.cpp" />
     <ClCompile Include="src\Engine\Camera\Camera.cpp" />
@@ -190,6 +213,8 @@
     <ClCompile Include="src\Util\AES\AES.cpp" />
     <ClCompile Include="src\Util\UString\UString.cpp" />
     <ClCompile Include="src\Engine\VulkanInterface\VulkanInterface.cpp" />
+    <ClCompile Include="src\Engine\VertexArrayObject\VertexArrayObject.cpp" />
+    <ClCompile Include="src\Engine\TextureAtlas\TextureAtlas.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
