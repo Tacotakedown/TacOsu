@@ -106,13 +106,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\OpenCL\include;C:\VulkanSDK\1.3.250.1\Include;$(SolutionDir)tacosu\dependencies\FreeType\include;$(SolutionDir)tacosu\src\Engine;$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)tacosu\dependencies\libcurl\include;C:\OpenCL\include;C:\VulkanSDK\1.3.250.1\Include;$(SolutionDir)tacosu\dependencies\Enet\include;$(SolutionDir)tacosu\dependencies\FreeType\include;$(SolutionDir)tacosu\src\Engine;$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\OpenCL\lib;C:\VulkanSDK\1.3.250.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>vulkan-1.lib;OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)tacosu\dependencies\Enet\lib;C:\OpenCL\lib;C:\VulkanSDK\1.3.250.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;OpenCL.lib;enet64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -124,18 +124,19 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\OpenCL\include;C:\VulkanSDK\1.3.250.1\Include;$(SolutionDir)tacosu\dependencies\FreeType\include;$(SolutionDir)tacosu\src\Engine;$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)tacosu\dependencies\libcurl\include;C:\OpenCL\include;C:\VulkanSDK\1.3.250.1\Include;$(SolutionDir)tacosu\dependencies\Enet\include;$(SolutionDir)tacosu\dependencies\FreeType\include;$(SolutionDir)tacosu\src\Engine;$(SolutionDir)tacosu\src\Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\OpenCL\lib;C:\VulkanSDK\1.3.250.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>vulkan-1.lib;OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)tacosu\dependencies\Enet\lib;C:\OpenCL\lib;C:\VulkanSDK\1.3.250.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;OpenCL.lib;enet64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Engine\NetworkHandler\NetworkHandler.h" />
     <ClInclude Include="src\Engine\Profiler\Profiler.h" />
     <ClInclude Include="src\Engine\AnimationHandler\AnimationHandler.h" />
     <ClInclude Include="src\Engine\OpenCLInterface\OpenCLInterface.h" />
@@ -180,6 +181,7 @@
     <ClInclude Include="src\Engine\TextureAtlas\TextureAtlas.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Engine\NetworkHandler\NetworkHandler.cpp" />
     <ClCompile Include="src\Engine\Profiler\Profiler.cpp" />
     <ClCompile Include="src\Engine\AnimationHandler\AnimationHandler.cpp" />
     <ClCompile Include="src\Engine\OpenCLInterface\OpenCLInterface.cpp" />
