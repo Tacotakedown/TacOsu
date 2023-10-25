@@ -19,13 +19,19 @@ public:
 
 	inline uint32_t getQueueFamilyIndex() const { return m_iQueueFamilyIndex; }
 	inline bool isReady() const { return m_bReady; }
-
+	inline VkInstance getInstance() const { return m_instance; }
+	inline VkPhysicalDevice getPhysicalDevice() const { return m_physicalDevice; }
+	inline VkDevice getDevice() const { return m_device; }
 
 
 private:
 	bool		m_bReady;
 	uint32_t	m_iQueueFamilyIndex;
+	VkInstance m_instance;
+	VkPhysicalDevice m_physicalDevice;
+	VkDevice m_device;
+	VkCommandPool m_commandPool;
 };
-
+extern VulkanInterface* vulkan;
 
 #endif // !VULKANINTERFACE_H

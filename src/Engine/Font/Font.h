@@ -12,7 +12,7 @@ public:
 	static const wchar_t UNKNOWN_CHAR = 63;
 
 	struct GLYPH_METRICS {
-		wchar_t charcter;
+		wchar_t character;
 
 		unsigned int uvPixelsX;
 		unsigned int uvPixelsY;
